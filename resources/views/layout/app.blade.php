@@ -40,10 +40,10 @@
             <ul class="flex items-center">
                 @guest
                 <li>
-                    <a href="{{route('login')}}" class="p-3 inline ">Login</a>
+                    <a href="{{route('login')}}" class="p-3 inline ">Masuk</a>
                 </li>
                 <li>
-                    <a href="{{route('register')}}" class="p-3 inline">Register</a>
+                    <a href="{{route('register')}}" class="p-3 inline">Daftar</a>
                 </li>
                 @endguest
 
