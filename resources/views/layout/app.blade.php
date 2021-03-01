@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-gray-300">
-    <nav class="p-6 bg-blue-500 flex justify-between mb-6">
+    <nav class="p-6 bg-red-500 flex justify-between mb-6">
 
         <ul class="flex items-center justify-content-end">
             @auth
