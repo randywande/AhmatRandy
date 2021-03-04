@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RandSocial.com</title>
+    <title>RandTweet.com</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 
 <body class="bg-gray-300">
-    <nav class="p-6 bg-red-500 flex justify-between mb-6">
+    <nav class="p-6 bg-blue-500 flex justify-between mb-6">
 
         <ul class="flex items-center justify-content-end">
             @auth
