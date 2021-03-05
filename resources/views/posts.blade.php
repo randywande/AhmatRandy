@@ -28,8 +28,18 @@
             <a href="" class="font-bold">{{$post->user->name}}</a>
             <span class="text-gray-600 text-sm">{{$post->created_at->diffForHumans()}}</span>
             <p class="mb-2">{{$post->body}}</p>
+            @if ($post->ownedBy(auth()->user()))
+            <div class="my-2">
+                <form action="{{route('posts.destroy', $post)}}" method="post" class="mr-1">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-blue-800">Delete</button>
+                </form>
+            </div>
+            @endif
 
             <div class="flex items-center">
+            @auth
                 @if(!$post->likedBy(auth()->user()))
                 <form action="{{route('post.like', $post)}}" method="post" class="mr-1">
                     @csrf
@@ -41,12 +51,14 @@
                     @method('DELETE')
                     <button type="submit" class="text-blue-800">Unlike</button>
                 </form>
+                @endauth
+               
                 <span>{{$post->likes->count()}} {{Str::plural('like', $post->likes->count())}}</span>
             </div>
             @endif
         </div>
         @endforeach
-
+            {{$posts->links()}}
         @else
         <p>There are No post</p>
         @endif
