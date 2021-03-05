@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(2);
+        $posts = Post::get();
         return view('posts', [
             'posts' => $posts
         ]);
@@ -20,11 +20,6 @@ class PostController extends Controller
         $this->validate($request, [
             'body' => 'required'
         ]);
-
-        // Post::create([
-        //     'user_id' => auth()->id(),
-        //     'body' => $request->body
-        // ]);
 
         $request->user()->posts()->create($request->only('body'));
         return back();
